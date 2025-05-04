@@ -1,0 +1,620 @@
+@use '../../utils/' as * ;
+
+/*
+::::::::::::::::::::::::::
+ FOOTER AREA CSS
+::::::::::::::::::::::::::
+*/
+
+//=== footer style 1 ===
+
+.footer1 {
+    padding-top: 100px;
+    .logo {
+        width: 160px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    .form-area {
+        position: relative;
+        margin-top: 28px;
+        margin-right: 20px;
+        input {
+            padding: 16px 22px;
+            border: none;
+            border-radius: 64px;
+            background-color: #F5F5FD;
+            width: 100%;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                color: var(--SEO-Marketing-Paragraph-Color, #5D6369);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px; /* 100% */
+                text-transform: capitalize;
+            }
+        }
+        .form-btn {
+            height: 44px;
+            width: 44px;
+            line-height: 44px;
+            border-radius: 50%;
+            text-align: center;
+            color: #fff;
+            border: none;
+            background: var(--SEO-Marketing-Gradient-Color, linear-gradient(90deg, #FB3F52 0%, #FA7D3C 100%));
+            position: absolute;
+            right: 7px;
+            top: 7px;
+        }
+    }
+    .menu-list {
+        padding-left: 30px;
+
+        @media #{$md} {
+            padding-left: 0;
+        }
+        @media #{$xs} {
+            padding-left: 0;
+        }
+        h3 {
+            color: var(--SEO-Marketing-Text-Color, #0B0314);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px; /* 100% */
+            margin-bottom: 20px;
+            @media #{$md} {
+                margin-bottom: 10px;
+                margin-top: 30px;
+            }
+            @media #{$xs} {
+                margin-bottom: 10px;
+                margin-top: 30px;
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    color: var(--SEO-Marketing-Text-Color, #0B0314);
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 16px; /* 100% */
+                    display: inline-block;
+                    margin-top: 16px;
+                    transition: all .4s;
+
+                    &:hover {
+                        transition: all .4s;
+                        color: #FA7D3C;
+                        transform: translateX(5px);
+                    }
+                }
+            }
+        } 
+        &.contact-list {
+            padding-left: 0;
+            .contact-box {
+                display: flex;
+                align-items: center;
+                padding-top: 16px;
+                .icon {
+                    margin-right: 10px;
+                }
+                .pera {
+                    a {
+                        display: inline-block;
+                        color: var(--SEO-Marketing-Text-Color, #0B0314);
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 16px; /* 100% */
+                        transition: all .4s;
+
+                        &:hover {
+                            transition: all .4s;
+                            color: #FA7D3C;
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+
+    .footer-border {
+        height: 1px;
+        width: 100%;
+        background-color: #E7E6E7;
+        margin: 20px 0px;
+    }
+    .coppyright {
+        color: rgba(17, 17, 17, 0.70);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 100% */
+    }
+    .footer-social {
+        text-align: end;
+        @media #{$md} {
+            text-align: start;
+            margin-top: 20px;
+        }
+
+        @media #{$xs} {
+            text-align: start;
+            margin-top: 20px;
+        }
+
+            li {
+                display: inline-block;
+                a {
+                    display: inline-block;
+                    height: 44px;
+                    width: 44px;
+                    line-height: 44px;
+                    text-align: center;
+                    border-radius: 50%;
+                    position: relative;
+                    color: #0B0314;
+                    font-size: 18px;
+                    margin: 0px 1px;
+                    transition: all .4s;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background-color: #F5F5FD;
+                        border-radius: 50%;
+                        z-index: -2;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background: var(--SEO-Marketing-Gradient-Color, linear-gradient(90deg, #FB3F52 0%, #FA7D3C 100%));
+                        border-radius: 50%;
+                        z-index: -1;
+                        opacity: 0;
+                        transition: all .4s;
+                    }
+                    &:hover {
+                        transition: all .4s;
+                        color: #fff;
+
+                        &::before {
+                            transition: all .4s;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+    }
+}
+
+//=== footer style 1 ===
+
+//=== footer style 3 ===
+
+.footer3 {
+    padding-top: 100px;
+    .logo {
+        width: 160px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    .form-area {
+        position: relative;
+        margin-top: 28px;
+        margin-right: 20px;
+        input {
+            padding: 16px 22px;
+            border: none;
+            border-radius: 64px;
+            background-color: #F5F5FD;
+            width: 100%;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                color: var(--SEO-Marketing-Paragraph-Color, #5D6369);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px; /* 100% */
+                text-transform: capitalize;
+            }
+        }
+        .form-btn {
+            height: 44px;
+            width: 44px;
+            line-height: 44px;
+            border-radius: 50%;
+            text-align: center;
+            color: #fff;
+            border: none;
+            background: #4D32A5;
+            position: absolute;
+            right: 7px;
+            top: 7px;
+        }
+    }
+    .menu-list {
+        padding-left: 30px;
+
+        @media #{$md} {
+            padding-left: 0;
+        }
+        @media #{$xs} {
+            padding-left: 0;
+        }
+        h3 {
+            color: var(--SEO-Marketing-Text-Color, #0B0314);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px; /* 100% */
+            margin-bottom: 20px;
+            @media #{$md} {
+                margin-bottom: 10px;
+                margin-top: 30px;
+            }
+            @media #{$xs} {
+                margin-bottom: 10px;
+                margin-top: 30px;
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    color: var(--SEO-Marketing-Text-Color, #0B0314);
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 16px; /* 100% */
+                    display: inline-block;
+                    margin-top: 16px;
+                    transition: all .4s;
+
+                    &:hover {
+                        transition: all .4s;
+                        color: #4D32A5;
+                        transform: translateX(5px);
+                    }
+                }
+            }
+        } 
+        &.contact-list {
+            padding-left: 0;
+            .contact-box {
+                display: flex;
+                align-items: center;
+                padding-top: 16px;
+                .icon {
+                    margin-right: 10px;
+                }
+                .pera {
+                    a {
+                        display: inline-block;
+                        color: var(--SEO-Marketing-Text-Color, #0B0314);
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 16px; /* 100% */
+                        transition: all .4s;
+
+                        &:hover {
+                            transition: all .4s;
+                            color: #4D32A5;
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+
+    .footer-border {
+        height: 1px;
+        width: 100%;
+        background-color: #E7E6E7;
+        margin: 20px 0px;
+    }
+    .coppyright {
+        color: rgba(17, 17, 17, 0.70);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 100% */
+    }
+    .footer-social {
+        text-align: end;
+        @media #{$md} {
+            text-align: start;
+            margin-top: 20px;
+        }
+
+        @media #{$xs} {
+            text-align: start;
+            margin-top: 20px;
+        }
+
+            li {
+                display: inline-block;
+                a {
+                    display: inline-block;
+                    height: 44px;
+                    width: 44px;
+                    line-height: 44px;
+                    text-align: center;
+                    border-radius: 50%;
+                    position: relative;
+                    color: #0B0314;
+                    font-size: 18px;
+                    margin: 0px 1px;
+                    transition: all .4s;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background-color: #F5F5FD;
+                        border-radius: 50%;
+                        z-index: -2;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background: #4D32A5;
+                        border-radius: 50%;
+                        z-index: -1;
+                        opacity: 0;
+                        transition: all .4s;
+                    }
+                    &:hover {
+                        transition: all .4s;
+                        color: #fff;
+
+                        &::before {
+                            transition: all .4s;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+    }
+}
+
+//=== footer style 3 ===
+
+//=== footer style 5 ===
+
+.footer5 {
+    padding-top: 100px;
+    .logo {
+        width: 160px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    .form-area {
+        position: relative;
+        margin-top: 28px;
+        margin-right: 20px;
+        input {
+            padding: 16px 22px;
+            border: none;
+            border-radius: 64px;
+            background-color: #F5F5FD;
+            width: 100%;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                color: var(--SEO-Marketing-Paragraph-Color, #5D6369);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px; /* 100% */
+                text-transform: capitalize;
+            }
+        }
+        .form-btn {
+            height: 44px;
+            width: 44px;
+            line-height: 44px;
+            border-radius: 50%;
+            text-align: center;
+            color: #fff;
+            border: none;
+            background: var(--Social-Media-Marketing-Linner-Color-Main, linear-gradient(90deg, #5700FC 2.31%, #9553FD 100%));
+            position: absolute;
+            right: 7px;
+            top: 7px;
+        }
+    }
+    .menu-list {
+        padding-left: 30px;
+
+        @media #{$md} {
+            padding-left: 0;
+        }
+        @media #{$xs} {
+            padding-left: 0;
+        }
+        h3 {
+            color: var(--SEO-Marketing-Text-Color, #0B0314);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px; /* 100% */
+            margin-bottom: 20px;
+            @media #{$md} {
+                margin-bottom: 10px;
+                margin-top: 30px;
+            }
+            @media #{$xs} {
+                margin-bottom: 10px;
+                margin-top: 30px;
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    color: var(--SEO-Marketing-Text-Color, #0B0314);
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 16px; /* 100% */
+                    display: inline-block;
+                    margin-top: 16px;
+                    transition: all .4s;
+
+                    &:hover {
+                        transition: all .4s;
+                        color: #4D32A5;
+                        transform: translateX(5px);
+                    }
+                }
+            }
+        } 
+        &.contact-list {
+            padding-left: 0;
+            .contact-box {
+                display: flex;
+                align-items: center;
+                padding-top: 16px;
+                .icon {
+                    margin-right: 10px;
+                }
+                .pera {
+                    a {
+                        display: inline-block;
+                        color: var(--SEO-Marketing-Text-Color, #0B0314);
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 16px; /* 100% */
+                        transition: all .4s;
+
+                        &:hover {
+                            transition: all .4s;
+                            color: #4D32A5;
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+
+    .footer-border {
+        height: 1px;
+        width: 100%;
+        background-color: #E7E6E7;
+        margin: 20px 0px;
+    }
+    .coppyright {
+        color: rgba(17, 17, 17, 0.70);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 100% */
+    }
+    .footer-social {
+        text-align: end;
+        @media #{$md} {
+            text-align: start;
+            margin-top: 20px;
+        }
+
+        @media #{$xs} {
+            text-align: start;
+            margin-top: 20px;
+        }
+
+            li {
+                display: inline-block;
+                a {
+                    display: inline-block;
+                    height: 44px;
+                    width: 44px;
+                    line-height: 44px;
+                    text-align: center;
+                    border-radius: 50%;
+                    position: relative;
+                    color: #0B0314;
+                    font-size: 18px;
+                    margin: 0px 1px;
+                    transition: all .4s;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background-color: #F5F5FD;
+                        border-radius: 50%;
+                        z-index: -2;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background: var(--Social-Media-Marketing-Linner-Color-Main, linear-gradient(90deg, #5700FC 2.31%, #9553FD 100%));
+                        border-radius: 50%;
+                        z-index: -1;
+                        opacity: 0;
+                        transition: all .4s;
+                    }
+                    
+                    &:hover {
+                        transition: all .4s;
+                        color: #fff;
+
+                        &::before {
+                            transition: all .4s;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+    }
+}
+
+//=== footer style 5 ===
+
+/*
+::::::::::::::::::::::::::
+ FOOTER AREA CSS
+::::::::::::::::::::::::::
+*/

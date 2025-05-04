@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="ID">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PMB STTP</title>
+
+ 
+</head>
+
+<link rel="stylesheet" href="assets/css/PMB/app.css" />
+
+<body class="p-4 md:p-6 lg:p-8">
+  <div class="form-container mx-auto max-w-4xl">
+    <div class="no-print form-header p-8 text-white">
+      <div class="mb-4 flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-12 w-12 text-white opacity-90"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+      </div>
+      <h1 class="text-center text-3xl font-bold md:text-4xl">
+        Formulir Pendaftaran
+      </h1>
+      <p class="mx-auto mt-3 max-w-lg text-center text-indigo-100">
+        Silakan lengkapi data diri Anda dengan benar untuk proses pendaftaran
+      </p>
+
+      <!-- Step Indicators -->
+      <div class="mt-8 flex items-center justify-between px-4 md:px-12">
+        <div class="flex flex-col items-center">
+          <div
+            id="step-indicator-1"
+            class="step-indicator active flex h-10 w-10 items-center justify-center rounded-full bg-white font-bold text-indigo-600">
+            1
+          </div>
+          <span class="mt-2 text-xs text-white">Data Diri</span>
+        </div>
+        <div class="mx-2 h-1 flex-1 bg-white bg-opacity-30"></div>
+        <div class="flex flex-col items-center">
+          <div
+            id="step-indicator-2"
+            class="step-indicator flex h-10 w-10 items-center justify-center rounded-full bg-white bg-opacity-50 font-bold text-indigo-600">
+            2
+          </div>
+          <span class="mt-2 text-xs text-white">Data Orang Tua</span>
+        </div>
+        <div class="mx-2 h-1 flex-1 bg-white bg-opacity-30"></div>
+        <div class="flex flex-col items-center">
+          <div
+            id="step-indicator-3"
+            class="step-indicator flex h-10 w-10 items-center justify-center rounded-full bg-white bg-opacity-50 font-bold text-indigo-600">
+            3
+          </div>
+          <span class="mt-2 text-xs text-white">Data Pendidikan</span>
+        </div>
+        <div class="mx-2 h-1 flex-1 bg-white bg-opacity-30"></div>
+        <div class="flex flex-col items-center">
+          <div
+            id="step-indicator-4"
+            class="step-indicator flex h-10 w-10 items-center justify-center rounded-full bg-white bg-opacity-50 font-bold text-indigo-600">
+            4
+          </div>
+          <span class="mt-2 text-xs text-white">Verifikasi</span>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="mt-6 px-4 md:px-12">
+        <div class="progress-bar">
+          <div
+            id="progress-bar-fill"
+            class="progress-bar-fill"
+            style="width: 25%"></div>
+        </div>
+      </div>
+    </div>
+
+    <form id="registrationForm" class="no-print p-6">
+      <!-- Step 1: Data Diri -->
+      <div id="step-1" class="step-content active">
+        <div class="mb-6 flex items-start rounded-lg bg-indigo-50 p-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-2 mt-0.5 h-6 w-6 text-indigo-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p class="text-sm text-indigo-700">
+            Silakan isi data diri Anda dengan lengkap dan benar. Data ini akan
+            digunakan untuk keperluan pendaftaran.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label
+                for="nama"
+                class="mb-1 block text-sm font-medium text-gray-700">Nama Lengkap <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="nama"
+                name="nama"
+                required=""
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <div>
+              <label
+                for="tempatLahir"
+                class="mb-1 block text-sm font-medium text-gray-700">Tempat Lahir <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="tempatLahir"
+                name="tempatLahir"
+                required=""
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <div>
+              <label
+                for="tanggalLahir"
+                class="mb-1 block text-sm font-medium text-gray-700">Tanggal Lahir <span class="text-red-500">*</span></label>
+              <input
+                type="date"
+                id="tanggalLahir"
+                name="tanggalLahir"
+                required=""
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-medium text-gray-700">Jenis Kelamin <span class="text-red-500">*</span></label>
+              <div class="mt-1 grid grid-cols-2 gap-4">
+                <label
+                  class="flex cursor-pointer items-center rounded-lg border border-gray-200 p-3 transition-colors hover:bg-indigo-50">
+                  <input
+                    type="radio"
+                    name="jenisKelamin"
+                    value="Laki-laki"
+                    required=""
+                    class="h-4 w-4 text-indigo-600 focus:ring-indigo-500" />
+                  <span class="ml-2">Laki-laki</span>
+                </label>
+                <label
+                  class="flex cursor-pointer items-center rounded-lg border border-gray-200 p-3 transition-colors hover:bg-indigo-50">
+                  <input
+                    type="radio"
+                    name="jenisKelamin"
+                    value="Perempuan"
+                    required=""
+                    class="h-4 w-4 text-indigo-600 focus:ring-indigo-500" />
+                  <span class="ml-2">Perempuan</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label
+                for="agama"
+                class="mb-1 block text-sm font-medium text-gray-700">Agama <span class="text-red-500">*</span></label>
+              <select
+                id="agama"
+                name="agama"
+                required=""
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="">Pilih Agama</option>
+                <option value="Islam">Islam</option>
+                <option value="Kristen">Kristen</option>
+                <option value="Katolik">Katolik</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Buddha">Buddha</option>
+                <option value="Konghucu">Konghucu</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="wargaNegara"
+                class="mb-1 block text-sm font-medium text-gray-700">Warga Negara <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="wargaNegara"
+                name="wargaNegara"
+                required=""
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                value="Indonesia" />
+            </div>
+            <div class="md:col-span-2">
+              <label
+                for="alamat"
+                class="mb-1 block text-sm font-medium text-gray-700">Alamat Lengkap <span class="text-red-500">*</span></label>
+              <textarea
+                id="alamat"
+                name="alamat"
+                rows="3"
+                required=""
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            </div>
+            <div>
+              <label
+                for="telepon"
+                class="mb-1 block text-sm font-medium text-gray-700">No. Telepon <span class="text-red-500">*</span></label>
+              <div class="relative">
+                <div
+                  class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                </div>
+                <input
+                  type="tel"
+                  id="telepon"
+                  name="telepon"
+                  required=""
+                  class="w-full rounded-lg border border-gray-300 py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+              </div>
+            </div>
+            <div>
+              <label
+                for="email"
+                class="mb-1 block text-sm font-medium text-gray-700">Alamat Email <span class="text-red-500">*</span></label>
+              <div class="relative">
+                <div
+                  class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required=""
+                  class="w-full rounded-lg border border-gray-300 py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-end">
+          <button
+            type="button"
+            id="next-1"
+            class="btn-primary flex items-center rounded-lg px-6 py-2 font-medium text-white shadow-md hover:shadow-lg">
+            Selanjutnya
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ml-1 h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Data Orang Tua -->
+      <div id="step-2" class="step-content">
+        <div class="mb-6 flex items-start rounded-lg bg-indigo-50 p-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-2 mt-0.5 h-6 w-6 text-indigo-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p class="text-sm text-indigo-700">
+            Silakan isi data orang tua atau wali Anda dengan lengkap dan
+            benar.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label
+                for="namaOrtu"
+                class="mb-1 block text-sm font-medium text-gray-700">Nama Orang Tua <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="namaOrtu"
+                name="namaOrtu"
+                required=""
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <div>
+              <label
+                for="teleponOrtu"
+                class="mb-1 block text-sm font-medium text-gray-700">Telepon Orang Tua <span class="text-red-500">*</span></label>
+              <div class="relative">
+                <div
+                  class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                </div>
+                <input
+                  type="tel"
+                  id="teleponOrtu"
+                  name="teleponOrtu"
+                  required=""
+                  class="w-full rounded-lg border border-gray-300 py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+              </div>
+            </div>
+            <div>
+              <label
+                for="pekerjaanOrtu"
+                class="mb-1 block text-sm font-medium text-gray-700">Pekerjaan Orang Tua
+                <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="pekerjaanOrtu"
+                name="pekerjaanOrtu"
+                required=""
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <div>
+              <label
+                for="alamatOrtu"
+                class="mb-1 block text-sm font-medium text-gray-700">Alamat Orang Tua</label>
+              <div class="mb-2 flex items-center">
+                <input type="checkbox" id="sameAddress" class="mr-2" />
+                <label for="sameAddress" class="text-sm text-gray-600">Sama dengan alamat pendaftar</label>
+              </div>
+              <textarea
+                id="alamatOrtu"
+                name="alamatOrtu"
+                rows="3"
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-between">
+          <button
+            type="button"
+            id="prev-2"
+            class="btn-secondary flex items-center rounded-lg px-6 py-2 font-medium text-white shadow-md hover:shadow-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mr-1 h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Sebelumnya
+          </button>
+          <button
+            type="button"
+            id="next-2"
+            class="btn-primary flex items-center rounded-lg px-6 py-2 font-medium text-white shadow-md hover:shadow-lg">
+            Selanjutnya
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ml-1 h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Data Pendidikan -->
+      <div id="step-3" class="step-content">
+        <div class="mb-6 flex items-start rounded-lg bg-indigo-50 p-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-2 mt-0.5 h-6 w-6 text-indigo-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p class="text-sm text-indigo-700">
+            Silakan isi data pendidikan terakhir dan pilihan program studi
+            Anda.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label
+                for="asalSekolah"
+                class="mb-1 block text-sm font-medium text-gray-700">Asal Sekolah <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="asalSekolah"
+                name="asalSekolah"
+                required=""
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <div>
+              <label
+                for="tahunLulus"
+                class="mb-1 block text-sm font-medium text-gray-700">Tahun Lulus <span class="text-red-500">*</span></label>
+              <select
+                id="tahunLulus"
+                name="tahunLulus"
+                required=""
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="">Pilih Tahun Lulus</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="jurusanSekolah"
+                class="mb-1 block text-sm font-medium text-gray-700">Jurusan Sekolah</label>
+              <input
+                type="text"
+                id="jurusanSekolah"
+                name="jurusanSekolah"
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <div>
+              <label
+                for="nilaiRataRata"
+                class="mb-1 block text-sm font-medium text-gray-700">Nilai Rata-rata</label>
+              <input
+                type="number"
+                id="nilaiRataRata"
+                name="nilaiRataRata"
+                min="0"
+                max="100"
+                step="0.01"
+                class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <div class="md:col-span-2">
+              <label
+                for="programStudi"
+                class="mb-1 block text-sm font-medium text-gray-700">Pilihan Program Studi
+                <span class="text-red-500">*</span></label>
+              <div class="mt-2 grid grid-cols-1 gap-4 md:grid-cols-3">
+                <label
+                  class="flex cursor-pointer flex-col rounded-lg border border-gray-200 p-4 transition-colors hover:bg-indigo-50">
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      name="programStudi"
+                      value="Informatika"
+                      required=""
+                      class="h-4 w-4 text-indigo-600 focus:ring-indigo-500" />
+                    <span class="ml-2 font-medium">Informatika</span>
+                  </div>
+                  <p class="mt-2 text-xs text-gray-500">
+                    Program studi yang mempelajari ilmu komputer dan
+                    pengembangan perangkat lunak.
+                  </p>
+                </label>
+                <label
+                  class="flex cursor-pointer flex-col rounded-lg border border-gray-200 p-4 transition-colors hover:bg-indigo-50">
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      name="programStudi"
+                      value="Elektro"
+                      required=""
+                      class="h-4 w-4 text-indigo-600 focus:ring-indigo-500" />
+                    <span class="ml-2 font-medium">Elektro</span>
+                  </div>
+                  <p class="mt-2 text-xs text-gray-500">
+                    Program studi yang mempelajari sistem kelistrikan dan
+                    elektronika.
+                  </p>
+                </label>
+                <label
+                  class="flex cursor-pointer flex-col rounded-lg border border-gray-200 p-4 transition-colors hover:bg-indigo-50">
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      name="programStudi"
+                      value="Manajemen"
+                      required=""
+                      class="h-4 w-4 text-indigo-600 focus:ring-indigo-500" />
+                    <span class="ml-2 font-medium">Manajemen</span>
+                  </div>
+                  <p class="mt-2 text-xs text-gray-500">
+                    Program studi yang mempelajari ilmu pengelolaan bisnis dan
+                    organisasi.
+                  </p>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-between">
+          <button
+            type="button"
+            id="prev-3"
+            class="btn-secondary flex items-center rounded-lg px-6 py-2 font-medium text-white shadow-md hover:shadow-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mr-1 h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Sebelumnya
+          </button>
+          <button
+            type="button"
+            id="next-3"
+            class="btn-primary flex items-center rounded-lg px-6 py-2 font-medium text-white shadow-md hover:shadow-lg">
+            Selanjutnya
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ml-1 h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4: Verifikasi -->
+      <div id="step-4" class="step-content">
+        <div class="mb-6 flex items-start rounded-lg bg-indigo-50 p-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-2 mt-0.5 h-6 w-6 text-indigo-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p class="text-sm text-indigo-700">
+            Silakan verifikasi data Anda dan selesaikan captcha untuk
+            menyelesaikan pendaftaran.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div
+            class="rounded-lg border border-indigo-100 bg-gradient-to-r from-indigo-50 to-purple-50 p-6">
+            <h3 class="mb-4 text-lg font-medium text-gray-900">
+              Verifikasi Captcha
+            </h3>
+            <div class="mb-3 flex flex-col md:flex-row md:items-center">
+              <div
+                id="captchaQuestion"
+                class="mb-2 mr-2 rounded-lg border border-indigo-200 bg-white px-4 py-2 text-xl font-medium shadow-sm md:mb-0">
+                9 + 1
+              </div>
+              <div class="mx-2 text-xl font-medium">=</div>
+              <input
+                type="number"
+                id="captchaAnswer"
+                name="captchaAnswer"
+                required=""
+                class="w-24 rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+              <button
+                type="button"
+                id="refreshCaptcha"
+                class="ml-2 rounded-lg border border-indigo-200 bg-white p-2 text-indigo-600 shadow-sm transition-colors hover:text-indigo-800">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+              </button>
+            </div>
+            <p class="text-sm text-gray-600">
+              Silakan jawab pertanyaan matematika di atas untuk memverifikasi
+              bahwa Anda bukan robot.
+            </p>
+          </div>
+
+          <div class="rounded-lg border border-gray-200 bg-white p-6">
+            <h3 class="mb-4 text-lg font-medium text-gray-900">
+              Ringkasan Data
+            </h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-sm font-medium text-gray-500">Data Diri</h4>
+                <div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2">
+                  <div class="text-sm">
+                    <span class="font-medium">Nama:</span>
+                    <span id="summary-nama"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Tempat, Tanggal Lahir:</span>
+                    <span id="summary-ttl"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Jenis Kelamin:</span>
+                    <span id="summary-jenisKelamin"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Agama:</span>
+                    <span id="summary-agama"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Warga Negara:</span>
+                    <span id="summary-wargaNegara"></span>
+                  </div>
+                  <div class="text-sm md:col-span-2">
+                    <span class="font-medium">Alamat:</span>
+                    <span id="summary-alamat"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">No. Telepon:</span>
+                    <span id="summary-telepon"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Email:</span>
+                    <span id="summary-email"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-t pt-4">
+                <h4 class="text-sm font-medium text-gray-500">
+                  Data Orang Tua
+                </h4>
+                <div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2">
+                  <div class="text-sm">
+                    <span class="font-medium">Nama Orang Tua:</span>
+                    <span id="summary-namaOrtu"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Telepon Orang Tua:</span>
+                    <span id="summary-teleponOrtu"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Pekerjaan Orang Tua:</span>
+                    <span id="summary-pekerjaanOrtu"></span>
+                  </div>
+                  <div class="text-sm md:col-span-2">
+                    <span class="font-medium">Alamat Orang Tua:</span>
+                    <span id="summary-alamatOrtu"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-t pt-4">
+                <h4 class="text-sm font-medium text-gray-500">
+                  Data Pendidikan
+                </h4>
+                <div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2">
+                  <div class="text-sm">
+                    <span class="font-medium">Asal Sekolah:</span>
+                    <span id="summary-asalSekolah"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Tahun Lulus:</span>
+                    <span id="summary-tahunLulus"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Jurusan Sekolah:</span>
+                    <span id="summary-jurusanSekolah"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Nilai Rata-rata:</span>
+                    <span id="summary-nilaiRataRata"></span>
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-medium">Program Studi:</span>
+                    <span id="summary-programStudi"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-between">
+          <button
+            type="button"
+            id="prev-4"
+            class="btn-secondary flex items-center rounded-lg px-6 py-2 font-medium text-white shadow-md hover:shadow-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mr-1 h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Sebelumnya
+          </button>
+          <button
+            type="button"
+            id="submit-form"
+            class="btn-primary flex items-center rounded-lg px-8 py-2 font-medium text-white shadow-md hover:shadow-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mr-1 h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            Kirim Pendaftaran
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Terms and Conditions Modal -->
+    <div
+      id="termsModal"
+      class="no-print modal-overlay fixed inset-0 z-50 flex hidden items-center justify-center">
+      <div
+        class="modal-content max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-lg bg-white p-6">
+        <div class="mb-4 flex items-center justify-between">
+          <h3 class="text-xl font-bold text-gray-900">
+            Syarat dan Ketentuan
+          </h3>
+          <button
+            id="closeTermsModal"
+            class="text-gray-400 hover:text-gray-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="prose prose-indigo max-w-none">
+          <h4>1. Ketentuan Umum</h4>
+          <p>
+            Dengan mengisi formulir pendaftaran ini, Anda menyatakan bahwa
+            semua informasi yang diberikan adalah benar dan akurat. Anda juga
+            menyetujui untuk mematuhi semua peraturan dan kebijakan yang
+            berlaku.
+          </p>
+
+          <h4>2. Penggunaan Data</h4>
+          <p>
+            Data yang Anda berikan akan digunakan untuk keperluan pendaftaran
+            dan proses seleksi. Kami akan menjaga kerahasiaan data Anda dan
+            tidak akan membagikannya kepada pihak ketiga tanpa persetujuan
+            Anda.
+          </p>
+
+          <h4>3. Proses Seleksi</h4>
+          <p>
+            Proses seleksi akan dilakukan berdasarkan kriteria yang telah
+            ditentukan. Keputusan panitia seleksi bersifat final dan tidak
+            dapat diganggu gugat.
+          </p>
+
+          <h4>4. Biaya Pendaftaran</h4>
+          <p>
+            Biaya pendaftaran harus dibayarkan sesuai dengan ketentuan yang
+            berlaku. Biaya pendaftaran tidak dapat dikembalikan dengan alasan
+            apapun.
+          </p>
+
+          <h4>5. Dokumen Pendukung</h4>
+          <p>
+            Anda diwajibkan untuk menyerahkan dokumen pendukung yang
+            diperlukan sesuai dengan ketentuan yang berlaku. Dokumen yang
+            tidak lengkap dapat mengakibatkan pendaftaran Anda tidak diproses.
+          </p>
+
+          <h4>6. Perubahan Data</h4>
+          <p>
+            Perubahan data hanya dapat dilakukan sebelum batas waktu
+            pendaftaran berakhir. Setelah batas waktu tersebut, perubahan data
+            tidak dapat dilakukan.
+          </p>
+
+          <h4>7. Pembatalan Pendaftaran</h4>
+          <p>
+            Pembatalan pendaftaran harus dilakukan secara tertulis dan
+            disampaikan kepada panitia pendaftaran. Biaya pendaftaran yang
+            telah dibayarkan tidak dapat dikembalikan.
+          </p>
+
+          <h4>8. Tanggung Jawab</h4>
+          <p>
+            Anda bertanggung jawab atas kebenaran data yang diberikan. Jika di
+            kemudian hari ditemukan ketidakbenaran data, maka pendaftaran Anda
+            dapat dibatalkan.
+          </p>
+
+          <h4>9. Persetujuan</h4>
+          <p>
+            Dengan mencentang kotak persetujuan, Anda menyatakan telah
+            membaca, memahami, dan menyetujui semua syarat dan ketentuan yang
+            berlaku.
+          </p>
+        </div>
+        <div class="mt-6">
+          <label class="checkbox-custom flex items-start">
+            <input type="checkbox" id="agreeTerms" class="mt-1" />
+            <span class="checkmark"></span>
+            <span class="ml-2 text-sm text-gray-700">Saya telah membaca dan menyetujui syarat dan ketentuan yang
+              berlaku.</span>
+          </label>
+        </div>
+        <div class="mt-6 flex justify-end">
+          <button
+            id="cancelTerms"
+            class="mr-2 rounded-md border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-50">
+            Batal
+          </button>
+          <button
+            id="confirmTerms"
+            class="rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+            disabled="">
+            Setuju &amp; Lanjutkan
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div
+      id="successModal"
+      class="no-print modal-overlay fixed inset-0 z-50 flex hidden items-center justify-center">
+      <div class="modal-content w-full max-w-md rounded-lg bg-white p-8">
+        <div class="text-center">
+          <div
+            class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+            <svg
+              class="h-8 w-8 text-green-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h3 class="mt-4 text-xl font-bold leading-6 text-gray-900">
+            Pendaftaran Berhasil!
+          </h3>
+          <div class="mt-3">
+            <p class="text-sm text-gray-500">
+              Data pendaftaran Anda telah berhasil disimpan. Tim kami akan
+              menghubungi Anda untuk proses selanjutnya.
+            </p>
+            <p class="mt-2 text-sm font-medium text-indigo-600">
+              Nomor Pendaftaran:
+              <span id="registrationNumber" class="font-bold"></span>
+            </p>
+          </div>
+          <div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+            <button
+              id="printButton"
+              type="button"
+              class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="mr-2 h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+              </svg>
+              Cetak Bukti Pendaftaran
+            </button>
+            <button
+              id="closeModal"
+              type="button"
+              class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none">
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="no-print loading-overlay">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Print Registration Proof -->
+    <div id="registrationProof" class="print-only hidden">
+      <div class="p-8">
+        <div class="mb-8 text-center">
+          <h1 class="text-2xl font-bold">BUKTI PENDAFTARAN</h1>
+          <p class="text-gray-600" id="printDate"></p>
+        </div>
+
+        <div class="mb-4 border-b-2 border-gray-300 pb-4">
+          <h2 class="mb-3 text-lg font-semibold">Data Diri</h2>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="text-gray-600">Nama Lengkap:</div>
+            <div id="print-nama" class="font-medium"></div>
+
+            <div class="text-gray-600">Tempat, Tanggal Lahir:</div>
+            <div id="print-ttl" class="font-medium"></div>
+
+            <div class="text-gray-600">Jenis Kelamin:</div>
+            <div id="print-jenisKelamin" class="font-medium"></div>
+
+            <div class="text-gray-600">Agama:</div>
+            <div id="print-agama" class="font-medium"></div>
+
+            <div class="text-gray-600">Warga Negara:</div>
+            <div id="print-wargaNegara" class="font-medium"></div>
+
+            <div class="text-gray-600">Alamat:</div>
+            <div id="print-alamat" class="font-medium"></div>
+
+            <div class="text-gray-600">No. Telepon:</div>
+            <div id="print-telepon" class="font-medium"></div>
+
+            <div class="text-gray-600">Email:</div>
+            <div id="print-email" class="font-medium"></div>
+          </div>
+        </div>
+
+        <div class="mb-4 border-b-2 border-gray-300 pb-4">
+          <h2 class="mb-3 text-lg font-semibold">Data Orang Tua</h2>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="text-gray-600">Nama Orang Tua:</div>
+            <div id="print-namaOrtu" class="font-medium"></div>
+
+            <div class="text-gray-600">Telepon Orang Tua:</div>
+            <div id="print-teleponOrtu" class="font-medium"></div>
+
+            <div class="text-gray-600">Pekerjaan Orang Tua:</div>
+            <div id="print-pekerjaanOrtu" class="font-medium"></div>
+
+            <div class="text-gray-600">Alamat Orang Tua:</div>
+            <div id="print-alamatOrtu" class="font-medium"></div>
+          </div>
+        </div>
+
+        <div class="mb-4 border-b-2 border-gray-300 pb-4">
+          <h2 class="mb-3 text-lg font-semibold">Data Pendidikan</h2>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="text-gray-600">Asal Sekolah:</div>
+            <div id="print-asalSekolah" class="font-medium"></div>
+
+            <div class="text-gray-600">Tahun Lulus:</div>
+            <div id="print-tahunLulus" class="font-medium"></div>
+
+            <div class="text-gray-600">Jurusan Sekolah:</div>
+            <div id="print-jurusanSekolah" class="font-medium"></div>
+
+            <div class="text-gray-600">Nilai Rata-rata:</div>
+            <div id="print-nilaiRataRata" class="font-medium"></div>
+
+            <div class="text-gray-600">Program Studi:</div>
+            <div id="print-programStudi" class="font-medium"></div>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t-2 border-gray-300 pt-4">
+          <div class="flex justify-between">
+            <div>
+              <p class="font-medium">Nomor Pendaftaran:</p>
+              <p id="print-noPendaftaran" class="text-lg font-bold"></p>
+            </div>
+            <div class="text-right">
+              <p class="font-medium">Tanggal Pendaftaran:</p>
+              <p id="print-tanggalPendaftaran" class="font-medium"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="text-sm text-gray-500">
+            Dokumen ini adalah bukti pendaftaran yang sah.
+          </p>
+          <p class="text-sm text-gray-500">
+            Silakan bawa bukti pendaftaran ini pada saat verifikasi berkas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/PMB/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+$colors: (
+    'text': (
+        'heading-1': #0B0314,
+        'pera-1': #5D6369,
+        'pera-2': #CCCCCE,
+        'white-1': #ffffff,
+    ),
+    'bg': (
+        'main1': var(--SEO-Marketing-New, linear-gradient(90deg, #3B32F6 0%, #49A6FF 100%)),
+        'main2': var(--SEO-Marketing-Gradient-Color, linear-gradient(90deg, #FB3F52 0%, #FA7D3C 100%)),
+        'common-1': #E9F4F6,
+        'common-2': #D9ECF0,
+        'common-3': #001518,
+        'common-4': #F6F8FA,
+        'common-5': #EDF4FE,
+        'common-6': #F9F8FE,
+        'common-7': #F4F1FE,
+        'white': #ffffff,
+    ),
+    'border': (
+        'color-1': #4b2c2c,
+    )
+);
